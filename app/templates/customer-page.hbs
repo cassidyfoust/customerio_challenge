@@ -1,0 +1,34 @@
+{{page-title "Customer"}}
+<div class="customer-page-wrapper">
+<h1>{{this.model.attributes.email}}</h1>
+Last Updated: {{this.model.last_updated}}
+<h2>Attributes:</h2>
+    <table class="table table-striped table-hover">
+        <tbody>
+            {{#each-in this.model.attributes as |attribute value|}}
+                <tr>
+                    <td>{{attribute}}:</td>
+                    <td>{{value}}</td> 
+                </tr>
+            {{/each-in}}
+        </tbody>
+    </table>
+<h2>Events:</h2>
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Event Name</th>
+                <th scope="col">Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each-in this.model.events as |event value|}}
+                <tr>
+                    <td>{{event}}:</td>
+                    <td>{{value}}</td> 
+                </tr>
+            {{/each-in}}
+        </tbody>
+    </table>
+</div>
+{{outlet}}

@@ -8,10 +8,23 @@
     justify-content: space-between;
 }
 
-.right-items {
-    padding-left: 40%;
+a:link {
+    text-decoration: none;
 }
 
-.customer-list {
+.right-items {
+    display: flex;
+    padding-left: 30%;
+}
+
+.menu-item {
     padding: 1em;
+}
+
+.table-wrapper {
+    padding: 5em;
+}
+
+.customer-page-wrapper {
+    padding: 5em;
 }
