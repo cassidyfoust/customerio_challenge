@@ -1,6 +1,6 @@
 import Route from '@ember/routing/route';
 
-export default class CustomerPageRoute extends Route {
+export default class EditCustomerRoute extends Route {
   async model(customerObject) {
     let customer;
     await fetch(`http://localhost:1323/customers/${customerObject.id}`)

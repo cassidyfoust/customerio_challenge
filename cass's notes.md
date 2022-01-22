@@ -12,3 +12,5 @@ list view:
 
 TO-DO:
 - add tests
+- get data from database
+- figure out how to combine data

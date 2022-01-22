@@ -15,7 +15,7 @@
                 <tr>
                     <th scope="col">{{customer.id}}</th>
                     <td>
-                        <LinkTo @route="customer-page" @model={{customer.id}}>
+                        <LinkTo @route="customer-page" @model={{customer}}>
                         {{customer.attributes.email}}
                         </LinkTo>
                     </td>
