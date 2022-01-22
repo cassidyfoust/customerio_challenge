@@ -1,0 +1,17 @@
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 10vh;
+    padding: 1em;
+    background-color: dodgerblue;
+    justify-content: space-between;
+}
+
+.right-items {
+    padding-left: 40%;
+}
+
+.customer-list {
+    padding: 1em;
+}

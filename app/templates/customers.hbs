@@ -1,0 +1,16 @@
+{{page-title "Customers"}}
+
+
+<h2>Customers</h2>
+
+<table class="customer-list">
+    <thead>
+    <td>ID</td> <td>Email</td> <td>Last Updated</td>
+</thead>
+{{#each model as |customer|}}
+  <tr>
+    <td>{{customer.id}}</td> <td>{{customer.attributes.email}}</td> <td>{{customer.last_updated}}</td>
+  </tr>
+{{/each}}
+</table>
+{{outlet}}
