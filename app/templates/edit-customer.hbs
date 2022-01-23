@@ -25,13 +25,13 @@ Last Updated: {{this.model.last_updated}}
             {{/each-in}}
                  <tr class="form-group">
                      <td>
-                        <input type="text" class="form-control" placeholder="name">
-                     </td>
-                     <td>
-                         <input type="text" class="form-control" placeholder="value">
-                     </td>
-                     <td>
-                        <button type="button" class="btn btn-success"><i class="fa fa-plus"></i></button>
+                        {{input value=newAttributeName class="form-control" placeholder="name"}}
+                    </td>
+                    <td>
+                        {{input value=newAttributeValue class="form-control" placeholder="value"}}
+                    </td>
+                    <td>
+                        <button {{action 'addAttribute'}} type="button" class="btn btn-success"><i class="fa fa-plus"></i></button>
                     </td>
                 </tr>
     <button type="submit" class="btn btn-primary">Save Changes</button>
