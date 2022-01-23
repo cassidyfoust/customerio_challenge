@@ -13,13 +13,13 @@ Last Updated: {{this.model.last_updated}}
             {{#each-in this.model.attributes as |attribute value|}}
                 <tr class="form-group">
                     <td>
-                        <label for="exampleInputEmail1">{{attribute}}</label>
+                        <label for={{attribute}}>{{attribute}}</label>
                     </td>
                     <td>
-                        <input type="text" class="form-control" id={{attribute}} value={{value}}>
+                        <input value={{value}} id={{attribute}} class="form-control" onblur={{action 'attributeChanged' attribute}}>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                        <button {{action 'deleteAttribute' attribute}} type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                     </td>
                     </tr>
             {{/each-in}}
@@ -34,7 +34,7 @@ Last Updated: {{this.model.last_updated}}
                         <button {{action 'addAttribute'}} type="button" class="btn btn-success"><i class="fa fa-plus"></i></button>
                     </td>
                 </tr>
-    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <button type="submit" class="btn btn-primary" {{action 'updateCustomer'}}>Save Changes</button>
     </tbody>
     </table>
     </form>

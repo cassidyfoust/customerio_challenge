@@ -19,15 +19,32 @@ export default class EditCustomerController extends Controller {
         customer.save();
         });
     }
-    //     updateBoardGame() {
-    //       let updatedTitle = this.get('updatedTitle');
-    //       let game = this.get('model').findBy('id', '1');
-    //       game.set('title', updatedTitle); // locally update the title
-    //       game.save(); // save the title to API via PATCH
-    //     },
-    //     destroyBoardGame() {
-    //       let destroyId = this.get('destroyId');
-    //       let game = this.get('model').findBy('id', destroyId);
-    //       game.destroyRecord(); // destroy deletes & saves in one step
-    //     },
+
+    @action
+    deleteAttribute(attributeToDelete) {
+      let newAttributes = this.model.attributes;
+      delete newAttributes[attributeToDelete];
+      this.store
+        .findRecord('customer', this.model.id)
+        .then(function (customer) {
+          customer.attributes = newAttributes;
+          customer.save();
+        });
+    }
+
+    @action
+    updateCustomer() {
+      let newAttributes = this.model.attributes;
+      this.store
+        .findRecord('customer', this.model.id)
+        .then(function (customer) {
+          customer.attributes = newAttributes;
+          customer.save();
+        });
+    }
+
+    @action
+    attributeChanged(attribute, event) {
+      this.model.attributes[attribute] = event.target.value;
+    }
 };
